@@ -15,13 +15,23 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  # def password
-  #   @password ||= Password.new(password_hash)
-  # end
-  #
-  # def password=(new_password)
-  #   @password = Password.create(new_password)
-  #   self.password_hash = @password
-  # end
+  before_create :generate_token
+
+  def generate_token
+    self.confirmation_token = SecureRandom.urlsafe_base64
+  end
+
+  def confirm!
+    return if confirmed?
+
+    self.confirmed_at = Time.current
+    self.confirmation_token = ''
+
+    save!
+  end
+
+  def confirmed?
+    confirmed_at.present?
+  end
 
 end
