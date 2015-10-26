@@ -206,6 +206,10 @@ pt-BR:
       short: "%d de %B, %H:%M"
     pm: ''
 
+  flash:
+    notice:
+     signed_in: "Login efetuado com sucesso!"
+
 
   activerecord:
     models:
@@ -236,6 +240,19 @@ pt-BR:
         location: Localização
         title: Título
 
+  activemodel:
+    attributes:
+     user_session:
+      email: Email
+      password: Senha
+    errors:
+     messages:
+      invalid_login: 'Usuário ou senha inválidos'
+  helpers:
+   submit:
+    user_session:
+     create: 'Entrar'
+
   users:
    confirmations:
     success: Email confirmado com sucesso, obrigado!
@@ -251,6 +268,10 @@ pt-BR:
     error_explanation: Há erros no formulário
   links:
     back: Voltar
+  user_sessions:
+   new:
+    title: 'Login'
+    sign_up: 'Cadastre-se'
 
   layout:
    rooms: Quartos
@@ -269,4 +290,4 @@ pt-BR:
 #    sobrando na sua casa e ainda conhecer gente do mundo inteiro.
 #  confirm_link_html: 'Para você começar a usar o site, acesse o
 #    link: %{link}'
-#  thanks_html: 'Obrigado por se cadastrar no %{link}.'
+#  thanks_html: 'Obrigado por se cadastrar no %{link}.

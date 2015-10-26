@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     resources :rooms
     resources :users
 
-    # resource :confirmation, :only => [:show]
+    resource :confirmation, :only => [:show]
 
-    resource :user_confirmation, :only => [:show]
+    resource :user_sessions, :only => [:create, :new, :destroy]
 
   end
   # You can have the root of your site routed with "root"
