@@ -33,4 +33,16 @@ class UserSession
   def store(user)
     @session[:user_id] = user.id
   end
+
+  def current_user
+    @session[:user_id].present?
+  end
+
+  def user_signed_in?
+    @session[:user_id].present?
+  end
+
+  def destroy
+    @session[:user_id] = nil
+  end
 end
