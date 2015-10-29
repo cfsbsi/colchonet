@@ -35,7 +35,7 @@ class UserSession
   end
 
   def current_user
-    @session[:user_id].present?
+    User.find(@session[:user_id])
   end
 
   def user_signed_in?

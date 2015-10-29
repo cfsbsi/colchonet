@@ -2,22 +2,22 @@ class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def index
-    @rooms = Room.all
+    @rooms = Room.all.order('created_at desc')
   end
 
   def show
   end
 
   def new
-    @room = Room.new
+    @room = current_user.rooms.build
   end
 
   def edit
-    @room = Room.find(param[:id])
+    @room = current_user.rooms.find(params[:id])
   end
 
   def create
-    @room = Room.new(room_params)
+    @room = current_user.rooms.build(room_params)
 
     respond_to do |format|
       if @room.save
@@ -31,6 +31,9 @@ class RoomsController < ApplicationController
   end
 
   def update
+
+    @room = current_user.rooms.find(params[:id])
+
     respond_to do |format|
       if @room.update(room_params)
         format.html { redirect_to @room, notice: t('flash.notice.room_updated')}
@@ -43,7 +46,9 @@ class RoomsController < ApplicationController
   end
 
   def destroy
+    @room = current_user.rooms.find(params[:id])
     @room.destroy
+
     respond_to do |format|
       format.html { redirect_to rooms_url, notice: t('flash.notice.room_deleted')}
       format.json { head :no_content }
