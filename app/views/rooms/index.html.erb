@@ -1,31 +1,33 @@
-<!--<p id="notice"><= notice %></p>-->
+<h1><%= t '.title' %></h1>
 
-<h1>Listing Rooms</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @rooms.each do |room| %>
 
-  <tbody>
-    <% @rooms.each do |room| %>
-      <tr>
-        <td><%= room.title %></td>
-        <td><%= room.location %></td>
-        <td><%= room.description %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <article class="room">
+      <h2><%= link_to room.title, room %></h2>
+      <span class="created">
+        <%= t '.owner_html',
+              :owner => room.user.full_name,
+            :when => l(room.created_at, :format => :short) %>
+      </span>
 
-<br>
+      <p>
+        <span class="location">
+            <%= link_to room.location,
+                        "http://maps.google.com/?q=#{room.location}",
+                        :target => :blank %>
+        </span>
+      </p>
 
-<%= link_to 'New Room', new_room_path %>
+      <p><%= room.description %></p>
+      <% if belongs_to_user(room) %>
+          <ul>
+            <li><%= link_to t('.edit'), edit_room_path(room) %></li>
+            <li><%= link_to t('.destroy'), room_path(room), :method => :delete, :data => {:confirm => t('dialogs.destroy')} %></li>
+          </ul>
+      <% end %>
+
+    </article>
+<% end %>
+
+
