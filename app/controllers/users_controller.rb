@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :require_no_authentication, :only => [:new, :create]
   before_filter :can_change, :only => [:edit, :update]
+  before_filter :require_authentication, :only => :rooms
 
   def new
     @user = User.new
@@ -44,5 +45,9 @@ class UsersController < ApplicationController
 
   def user
     @user ||= User.find(params[:id])
+  end
+
+  def rooms
+    @rooms =  User.find(params[:id]).rooms.order('created_at desc') #  current_user.rooms.
   end
 end
