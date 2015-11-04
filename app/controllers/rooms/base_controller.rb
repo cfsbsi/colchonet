@@ -3,6 +3,6 @@ class Rooms::BaseController < ApplicationController
   private
 
   def room
-    @room ||= Room.find(params[:id])
+    @room ||= Room.find(params[:room_id])
   end
 end

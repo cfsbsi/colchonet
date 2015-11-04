@@ -2,15 +2,15 @@ class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
   def index
-    @rooms = Room.all.order('created_at desc')
+    @rooms = Room.most_recent.map do |room|
+    # Não exibiremos o formulário na listagem
+      RoomPresenter.new(room, self, true)
+    end
   end
 
   def show
-    @room = Room.find(params[:id])
-
-    if user_signed_in?
-      @user_review = @room.reviews.find_or_initialize_by_user_id(current_user.id)
-    end
+    room_model = Room.find(params[:id])
+    @room = RoomPresenter.new(room_model, self)
   end
 
   def new
@@ -41,7 +41,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.update(room_params)
-        format.html { redirect_to @room, notice: t('flash.notice.room_updated')}
+        format.html { redirect_to @room, notice: t('flash.notice.room_updated') }
         format.json { render :show, status: :ok, location: @room }
       else
         format.html { render :edit }
@@ -55,19 +55,19 @@ class RoomsController < ApplicationController
     @room.destroy
 
     respond_to do |format|
-      format.html { redirect_to rooms_url, notice: t('flash.notice.room_deleted')}
+      format.html { redirect_to rooms_url, notice: t('flash.notice.room_deleted') }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_room
-      @room = Room.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_room
+    @room = Room.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def room_params
-      params.require(:room).permit(:title, :location, :description)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def room_params
+    params.require(:room).permit(:title, :location, :description)
+  end
 end

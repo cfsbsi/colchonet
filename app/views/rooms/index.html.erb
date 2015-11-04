@@ -1,9 +1,5 @@
 <h1><%= t '.title' %></h1>
 
-
-<% @rooms.each do |room| %>
-
-    <%= render :partial => 'room', :object => room%>
-<% end %>
+<%= render @rooms %>
 
 

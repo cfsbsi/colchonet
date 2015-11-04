@@ -17,8 +17,7 @@ class RoomPresenter
   end
 
   def review
-    @review ||= @room.reviews.
-        find_or_initialize_by_user_id(@context.current_user.id)
+    @review ||= @room.reviews.find_or_initialize_by(user_id: @context.current_user.id)
   end
 
   def review_route
