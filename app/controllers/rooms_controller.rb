@@ -4,7 +4,7 @@ class RoomsController < ApplicationController
   def index
     @rooms = Room.most_recent.map do |room|
     # Não exibiremos o formulário na listagem
-      RoomPresenter.new(room, self, true)
+      RoomPresenter.new(room, self, false)
     end
   end
 

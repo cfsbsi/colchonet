@@ -250,6 +250,10 @@ pt-BR:
 
   rooms:
    review:
+    stats:
+     one: '(1 avaliação)'
+     other: '(%{count} avaliações)'
+   review_form:
     login_to_review: 'Faça o login para avaliar quartos'
    room:
     owner_html: '&mdash; %{owner} (%{when})'

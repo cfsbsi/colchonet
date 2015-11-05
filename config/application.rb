@@ -21,6 +21,7 @@ module Colchonet
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :'pt-BR'
 
+    config.assets.paths << Rails.root.join("vendor", "assets", "fonts")
 
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
