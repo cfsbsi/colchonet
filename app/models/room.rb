@@ -9,8 +9,16 @@ class Room < ActiveRecord::Base
     order('created_at DESC')
   }
 
+
   def complete_name
     "#{title}, #{location}"
   end
 
+  def self.search(query)
+    if query.present?
+      where(['location LIKE :query OR title LIKE :query OR description LIKE :query', :query => "%#{query}%"])
+    else
+      all
+    end
+  end
 end

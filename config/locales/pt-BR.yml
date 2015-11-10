@@ -249,6 +249,8 @@ pt-BR:
     destroy: 'Você tem certeza que quer remover?'
 
   rooms:
+   search:
+    search_for: 'Buscar por...'
    review:
     stats:
      one: '(1 avaliação)'
@@ -261,6 +263,7 @@ pt-BR:
     destroy: 'Remover'
    index:
     title: 'Quartos disponíveis'
+    search_results: 'Resultados da busca'
   activemodel:
     attributes:
      user_session:
@@ -303,7 +306,13 @@ pt-BR:
    my_profile: Meu perfil
    signout: Logout
 
-
+  views:
+   pagination:
+    first: "&laquo; Primeira"
+    last: "Última &raquo;"
+    previous: "&lsaquo; Anterior"
+    next: "Próxima &rsaquo;"
+    truncate: "..."
   general:
    form_errors: Há erro no formulário, por favor verifique.
 
