@@ -1,6 +1,6 @@
 == Colchonet
 
-*Colchonet*[www.github.com/cfsbsi/colchonet] is my first RoR App, I followed the Ruby on Rails - Coloque sua aplicação Web nos Trilhos book. 
+*Colchonet*[www.github.com/cfsbsi/colchonet] is my first RoR App, I followed the "Ruby on Rails - Coloque sua aplicação Web nos Trilhos" book. 
 
 * Ruby 2.2.3
 
