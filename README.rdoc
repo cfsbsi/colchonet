@@ -1,15 +1,23 @@
-== README
+== Colchonet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*Colchonet*[www.github.com/cfsbsi/colchonet] is my first RoR App, I followed the Ruby on Rails - Coloque sua aplicação Web nos Trilhos book. 
 
-Things you may want to cover:
+* Ruby 2.2.3
 
-* Ruby version
+* Rails 4.2.4
 
-* System dependencies
+==== Dependencies
+* sqllite3
+* kaminari
+* carrierwave
+* rmagick
 
-* Configuration
+=== How to run
+
+ bundle install
+ rake db:migrate
+ rails server
+
 
 * Database creation
 
