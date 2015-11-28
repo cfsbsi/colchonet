@@ -22,8 +22,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-#gem to pagination
+# Paginate
 gem 'kaminari'
+# Photos Upload
+gem 'carrierwave'
+gem 'rmagick'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

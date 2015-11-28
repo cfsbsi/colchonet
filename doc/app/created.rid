@@ -1,0 +1,19 @@
+Sat, 28 Nov 2015 16:05:03 -0200
+README.rdoc	Thu, 17 Sep 2015 20:23:16 -0300
+app/controllers/application_controller.rb	Tue, 27 Oct 2015 22:32:55 -0200
+app/controllers/home_controller.rb	Sun, 27 Sep 2015 19:08:55 -0300
+app/controllers/rooms/base_controller.rb	Tue, 03 Nov 2015 22:03:07 -0200
+app/controllers/rooms/reviews_controller.rb	Tue, 03 Nov 2015 22:07:43 -0200
+app/controllers/rooms_controller.rb	Mon, 09 Nov 2015 22:32:36 -0200
+app/controllers/user_confirmations_controller.rb	Thu, 22 Oct 2015 23:42:12 -0200
+app/controllers/user_sessions_controller.rb	Sun, 01 Nov 2015 12:03:03 -0200
+app/controllers/users_controller.rb	Sun, 01 Nov 2015 12:03:17 -0200
+app/helpers/application_helper.rb	Fri, 02 Oct 2015 23:40:39 -0300
+app/helpers/rooms_helper.rb	Thu, 29 Oct 2015 22:18:46 -0200
+app/mailers/signup_mailer.rb	Thu, 22 Oct 2015 23:45:46 -0200
+app/models/review.rb	Wed, 04 Nov 2015 23:42:23 -0200
+app/models/room.rb	Mon, 09 Nov 2015 22:33:38 -0200
+app/models/user.rb	Mon, 02 Nov 2015 10:51:50 -0200
+app/models/user_session.rb	Wed, 28 Oct 2015 22:55:31 -0200
+app/presenters/room_collection_presenter.rb	Mon, 09 Nov 2015 22:31:01 -0200
+app/presenters/room_presenter.rb	Wed, 04 Nov 2015 23:43:38 -0200

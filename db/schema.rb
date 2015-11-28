@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101142448) do
+ActiveRecord::Schema.define(version: 20151111220023) do
+
+  create_table "ddds", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "user_id"
