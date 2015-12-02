@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, password)
     confirmed.
-        find_by_email(email).
+        find_by(email: email).
         authenticate(password)
   end
 
