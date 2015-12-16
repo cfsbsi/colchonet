@@ -1,4 +1,4 @@
-class UserConfirmationsController < ApplicationController
+class ConfirmationsController < ApplicationController
   def show
     user  = User.find_by_confirmation_token(params[:token])
 
