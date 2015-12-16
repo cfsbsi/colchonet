@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Room, type: :model do
   it 'persist new room' do
-    title = 'First room'
+    title = 'Quarto um'
     location = 'Sorocaba-SP'
     description = 'Quarto com uma cama, comoda e ventilador de teto.'
     room = Room.create(title: title, location: location, description: description)
